@@ -1,0 +1,7 @@
+﻿@page "/all"
+
+@foreach(var q in Questions)
+{
+    <b>@(Questions.IndexOf(q)+1)-question</b>
+    <Question Model=q />
+}

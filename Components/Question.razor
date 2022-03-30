@@ -1,0 +1,15 @@
+﻿<div class="col-6">
+    <div>
+        @((MarkupString) Preview(Model.Content))
+    </div>
+    <div>
+        A) @((MarkupString) Preview(Model.OptionA))
+        B) @((MarkupString) Preview(Model.OptionB))
+        C) @((MarkupString) Preview(Model.OptionC))
+        D) @((MarkupString) Preview(Model.OptionD))
+    </div>
+    <p>Right answer is @Model.Answer</p>
+    <div>
+        Creater is @Model.Creater
+    </div>
+</div>

@@ -1,0 +1,37 @@
+﻿@page "/create"
+
+<PageTitle>Create new test</PageTitle>
+
+<form class="col-6" id="contact-form" method="POST">
+    <div class="row">
+        <textarea name="Content" @bind-value="Model.Content" @bind-value:event="oninput" id="content" type="text" placeholder="Content for question" required="required"></textarea>
+        <input name="OptionA" @bind-value="Model.OptionA" @bind-value:event="oninput" id="optiona" type="text" placeholder="Option A" required="required">
+        <input name="OptionB" @bind-value="Model.OptionB" @bind-value:event="oninput" id="optionb" type="text" placeholder="Option B" required="required">
+        <input name="OptionC" @bind-value="Model.OptionC" @bind-value:event="oninput" id="optionc" type="text" placeholder="Option C" required="required">
+        <input name="OptionD" @bind-value="Model.OptionD" @bind-value:event="oninput" id="optiond" type="text" placeholder="Option D" required="required">
+        <select name="Answer" @bind-value="Model.Answer" @bind-value:event="oninput" id="answer" required>
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+            <option>D</option>
+        </select>
+        <input name="Creater" @bind-value="Model.Creater" @bind-value:event="oninput" id="creater" type="text" placeholder="Creater" required="required">
+        <button onclick="send_mail()" type="button" value="Send" class="btn ">Send</button>
+        <span id="suce_message" class="text-success" style="display: none">Test created</span>
+    </div>
+</form>
+<div class="col-6">
+    <div>
+        @((MarkupString) Preview(Model.Content))
+    </div>
+    <div>
+        A) @((MarkupString) Preview(Model.OptionA))
+        B) @((MarkupString) Preview(Model.OptionB))
+        C) @((MarkupString) Preview(Model.OptionC))
+        D) @((MarkupString) Preview(Model.OptionD))
+    </div>
+    <p>Right answer is @Model.Answer</p>
+    <div>
+        Creater is @Model.Creater
+    </div>
+</div>
